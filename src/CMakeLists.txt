@@ -24,6 +24,7 @@ add_definitions(${CFLAGS} "-DGETTEXT_PACKAGE=\"seasonhunter\"")
 vala_precompile(VALA_C
     main.vala
     config.vala
+    season-hunter.vala
 PACKAGES
     gtk+-3.0)
 
