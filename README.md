@@ -19,6 +19,8 @@ $ cd SeasonHunter/
 then compile and install as shown bellow
 
 ```ssh
+$ mkdir build && cd build/
+$ cmake .
 $ make && make install
 ```
 
@@ -26,4 +28,4 @@ $ make && make install
 *TODO*
 
 ## Author
-Diego Toral <diegotoral@gmail.com>
+Diego Toral - <diegotoral@gmail.com>
