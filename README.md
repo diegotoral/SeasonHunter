@@ -20,7 +20,7 @@ then compile and install as shown bellow
 
 ```ssh
 $ mkdir build && cd build/
-$ cmake .
+$ cmake ..
 $ make && make install
 ```
 
