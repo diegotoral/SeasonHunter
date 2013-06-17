@@ -26,13 +26,17 @@ namespace SeasonHunter {
 
         public override void activate ()
         {
-            if (get_windows() == null)
+            if (get_windows () == null)
             {
                 // Load settings.
-                this.settings = new Settings ("github.diegotoral.seasonhunter");
+                this.settings = new Settings ("org.diegotoral.seasonhunter.preferences.window");
 
                 this.m_window = new Gtk.ApplicationWindow (this);
-                this.m_window.set_default_size (800, 600);
+                this.m_window.set_title ("SeasonHunter");
+                this.m_window.set_default_size (
+                    this.settings.get_int ("window-width"),
+                    this.settings.get_int ("window-height")
+                );
 
                 this.m_window.show_all ();
             }
