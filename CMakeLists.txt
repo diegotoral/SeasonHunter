@@ -14,7 +14,7 @@ set (RELEASE_NAME "O-One")
 set (VERSION "0.1")
 set (CMAKE_C_FLAGS "-ggdb")
 
-configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
+configure_file (${CMAKE_SOURCE_DIR}/src/Config.vala.cmake ${CMAKE_SOURCE_DIR}/src/Config.vala)
 add_definitions(-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
 # Load the modules placed into the ./cmake directory.
