@@ -6,6 +6,7 @@
 - CMake
 - Vala (>=0.18.0)
 - Gtk+ (>=3.0)
+- Granite
 
 ## Installation
 ### From source
