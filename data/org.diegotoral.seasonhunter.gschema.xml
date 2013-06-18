@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-    <schema id="org.diegotoral.seasonhunter.preferences.window" path="/org/diegotoral/seasonhunter/preferences/window/" gettext-domain="seasonhunter">
+    <schema id="org.diegotoral.seasonhunter" path="/org/diegotoral/seasonhunter/" gettext-domain="seasonhunter">
         <key name="window-width" type="i">
             <default>800</default>
             <summary>The window width</summary>
