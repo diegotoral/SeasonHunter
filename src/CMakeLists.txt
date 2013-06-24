@@ -26,6 +26,7 @@ vala_precompile(VALA_C
     Config.vala
     SeasonHunter.vala
     Settings.vala
+    Widgets/Toolbar.vala
 PACKAGES
     gtk+-3.0
     gee-1.0

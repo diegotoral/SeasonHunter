@@ -17,8 +17,9 @@ namespace SeasonHunter {
     public class SeasonHunter : Granite.Application {
 
         private Gtk.Box container;
-        private Gtk.Toolbar toolbar;
         private Gtk.ApplicationWindow m_window;
+
+        private Widgets.Toolbar toolbar;
         private Granite.Widgets.Welcome welcome;
 
         private Settings settings;
@@ -61,6 +62,7 @@ namespace SeasonHunter {
             {
                 // Load settings.
                 settings = new Settings ();
+                container = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
 
                 m_window = new Gtk.ApplicationWindow (this);
                 m_window.set_title ("SeasonHunter");
@@ -69,26 +71,14 @@ namespace SeasonHunter {
                     settings.window_height
                 );
 
-                container = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-
-                build_toolbar ();
+                toolbar = new Widgets.Toolbar (this);
+                container.pack_start (toolbar, false);
 
                 show_welcome ();
 
                 m_window.add (container);
                 m_window.show_all ();
             }
-        }
-
-        public void build_toolbar ()
-        {
-            var menu = new Gtk.Menu();
-            toolbar = new Gtk.Toolbar();
-            Granite.Widgets.AppMenu app_menu = create_appmenu (menu);
-
-            toolbar.add (app_menu);
-
-            container.pack_start (toolbar, false);
         }
 
         public void show_welcome ()
@@ -100,7 +90,7 @@ namespace SeasonHunter {
             );
 
             // Append buttons.
-            welcome.append ("icon-name", "Search a show", "Search for a show to add to your collection");
+            welcome.append ("icon-name", _("Find a show"), _("Search for a show to add to your collection"));
 
             container.pack_end (welcome, true, true, 0);
         }
