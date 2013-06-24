@@ -16,7 +16,10 @@
 namespace SeasonHunter {
     public class SeasonHunter : Granite.Application {
 
+        private Gtk.Box container;
+        private Gtk.Toolbar toolbar;
         private Gtk.ApplicationWindow m_window;
+        private Granite.Widgets.Welcome welcome;
 
         private Settings settings;
 
@@ -57,17 +60,49 @@ namespace SeasonHunter {
             if (get_windows () == null)
             {
                 // Load settings.
-                this.settings = new Settings ();
+                settings = new Settings ();
 
-                this.m_window = new Gtk.ApplicationWindow (this);
-                this.m_window.set_title ("SeasonHunter");
-                this.m_window.set_default_size (
-                    this.settings.window_width,
-                    this.settings.window_height
+                m_window = new Gtk.ApplicationWindow (this);
+                m_window.set_title ("SeasonHunter");
+                m_window.set_default_size (
+                    settings.window_width,
+                    settings.window_height
                 );
 
-                this.m_window.show_all ();
+                container = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+
+                build_toolbar ();
+
+                show_welcome ();
+
+                m_window.add (container);
+                m_window.show_all ();
             }
+        }
+
+        public void build_toolbar ()
+        {
+            var menu = new Gtk.Menu();
+            toolbar = new Gtk.Toolbar();
+            Granite.Widgets.AppMenu app_menu = create_appmenu (menu);
+
+            toolbar.add (app_menu);
+
+            container.pack_start (toolbar, false);
+        }
+
+        public void show_welcome ()
+        {
+            // Create the welcome widget.
+            welcome = new Granite.Widgets.Welcome (
+                _("Welcome to SeasonHunter"),
+                _("A lightweight TV tracker")
+            );
+
+            // Append buttons.
+            welcome.append ("icon-name", "Search a show", "Search for a show to add to your collection");
+
+            container.pack_end (welcome, true, true, 0);
         }
     }
 }

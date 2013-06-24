@@ -10,7 +10,7 @@
 
 ## Installation
 ### From source
-First, clone this repository with the following command:
+First, [download](https://github.com/diegotoral/SeasonHunter/archive/master.zip) or clone this repository with the following command:
 
 ```ssh
 $ git clone git://github.com/diegotoral/SeasonHunter.git
