@@ -19,11 +19,17 @@
         public Gtk.Menu menu;
         public Granite.Widgets.AppMenu app_menu;
 
-        public Toolbar (Granite.Application ?app)
+        private Gtk.UIManager ui;
+        private Gtk.ActionGroup main_actions;
+
+        public Toolbar (SeasonHunter app)
         {
+            menu = new Gtk.Menu ();
+            var item_file = new Gtk.MenuItem.with_label (_("Preferences"));
+
             get_style_context ().add_class ("primary-toolbar");
 
-            menu = new Gtk.Menu ();
+            menu.add (item_file);
             app_menu = app.create_appmenu (menu);
 
             add (menu);
@@ -39,5 +45,6 @@
             spacer.set_expand (true);
             add (spacer);
         }
+
     }
  }

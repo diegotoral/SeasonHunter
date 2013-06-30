@@ -13,17 +13,14 @@
  * Authored by: Diego Toral <diegotoral@gmail.com>
  */
 
- namespace SeasonHunter {
-    public class Settings : Granite.Services.Settings {
+ namespace SeasonHunter.Widgets {
+    public class PreferencesWindow : Gtk.Dialog {
 
-        public int window_width { get; set; }
-        public int window_height { get; set; }
+        private Granite.Widgets.StaticNotebook notebook;
 
-        public int sidebar_width { get; set; }
-
-        public Settings ()
+        public PreferencesWindow ()
         {
-            base ("org.diegotoral.seasonhunter");
+            notebook = new Granite.Widgets.StaticNotebook();
         }
     }
  }
