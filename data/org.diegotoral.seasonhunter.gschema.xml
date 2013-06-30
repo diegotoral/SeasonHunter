@@ -2,7 +2,7 @@
 <schemalist>
     <schema id="org.diegotoral.seasonhunter" path="/org/diegotoral/seasonhunter/" gettext-domain="seasonhunter">
         <key name="window-width" type="i">
-            <default>800</default>
+            <default>1100</default>
             <summary>The window width</summary>
             <description>
                 The main window width
@@ -10,11 +10,17 @@
         </key>
 
         <key name="window-height" type="i">
-            <default>800</default>
+            <default>600</default>
             <summary>The window height</summary>
             <description>
                 The main window height
             </description>
+        </key>
+
+        <key type="i" name="sidebar-width">
+            <default>200</default>
+            <summary>Sidebar width</summary>
+            <description>Sidebar width</description>
         </key>
     </schema>
 </schemalist>
