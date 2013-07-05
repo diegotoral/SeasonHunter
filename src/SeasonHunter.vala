@@ -16,8 +16,8 @@
 namespace SeasonHunter {
     public class SeasonHunter : Granite.Application {
 
-        private Gtk.Paned pane;
         private Gtk.Box main_container;
+        private Granite.Widgets.ThinPaned pane;
         private Gtk.ApplicationWindow m_window;
 
         private Widgets.Toolbar toolbar;
@@ -65,7 +65,7 @@ namespace SeasonHunter {
                 settings = new Settings ();
                 toolbar = new Widgets.Toolbar (this);
                 sidebar = new Widgets.SideBar (settings);
-                pane =  new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
+                pane =  new Granite.Widgets.ThinPaned ();
                 main_container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
                 // Window configuration
